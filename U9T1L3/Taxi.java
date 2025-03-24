@@ -21,7 +21,25 @@ public class Taxi extends Car {
         }
     }
 
-    public void printTaxi(){
-        System.out.println("License Plate Number: "+getLicensePlate()+"\nPassengers: "+getPassengers()+"\nToll Fee: "+getTollFee()+"\nElectric: "+isElectric()+"\nDiscounted: "+isDiscountApplied()+"\nTotal Fare Collected: "+getFareCollected());
+    public boolean chargeAndDropOffRiders(double farePerRider){
+
+    for(int i=0;i<getPassengers()-1;i++){
+        fareCollected+=farePerRider;
+    }
+        return dropOffPassengers(getPassengers()-1);
+
+    }
+
+    @Override
+    public void closeWindow(){
+super.closeWindow();
+        System.out.println("The screen divider is closed.");
+    }
+
+
+    @Override
+    public void  printInfo(){
+      super.printInfo();
+      System.out.println("Fare collected: "+ fareCollected);
     }
 }

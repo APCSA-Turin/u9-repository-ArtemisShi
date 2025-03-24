@@ -19,4 +19,9 @@ public int getMemory() {
 public void installOperatingSystem() {
     System.out.println("installing OS...");
 }
+
+public void printInfo(){
+    System.out.println("Screen Size: "+ screenSize);
+    System.out.println("Memory: "+memory);
+}
 }

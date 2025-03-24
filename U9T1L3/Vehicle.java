@@ -2,6 +2,7 @@ public class Vehicle {
   private String licensePlate;
   private double tollFee;
   private int passengers;
+  private boolean windowOpen;
   
   public Vehicle(String licensePlate, double tollFee, int passengers) {
     this.licensePlate = licensePlate;
@@ -33,6 +34,17 @@ public class Vehicle {
 
   public int getPassengers() {
     return passengers;
+  }
+
+  public void closeWindow(){
+    windowOpen=false;
+    System.out.println("The windows are closed.");
+  }
+
+  public void printInfo(){
+    System.out.println("license: "+ licensePlate);
+    System.out.println("toll fee: "+tollFee);
+    System.out.println("passengers: "+passengers);
   }
 
   public double calculateTollPrice() {

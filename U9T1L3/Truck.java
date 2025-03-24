@@ -38,8 +38,20 @@ public class Truck extends Vehicle {
 
     }
 
+    @Override
+    public double calculateTollPrice() {
+      double toll =getTollFee()*axles;
+      if(hasTrailer()){
+        toll*=2;
+      }
+      return toll;
+    }
 
-    public void printTruck(){
-        System.out.println("License Plate Number: "+getLicensePlate()+"\nPassengers: "+getPassengers()+"\nToll Fee: "+getTollFee()+"\nNumber of Axles: "+getAxles()+"\nTrailer: "+hasTrailer());
+
+    @Override
+    public void  printInfo(){
+      super.printInfo();
+      System.out.println("Axles: "+axles);
+      System.out.println("Has tailer? "+hasTrailer());
     }
   }
